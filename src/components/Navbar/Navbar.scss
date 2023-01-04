@@ -1,0 +1,30 @@
+.link{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0 1rem;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+        color: #f26a2e;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+.title{
+    text-align: left;
+}
+
+.link2{
+    color: #fff;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: normal;
+    padding: 0 1rem;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+        color: #f26a2e;
+        transition: all 0.3s ease-in-out;
+    }
+    
+}
