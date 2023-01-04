@@ -43,6 +43,9 @@ const [open, setOpen] = React.useState(false);
       }),
     })
       .then((res) => res.json())
+      .then((res) => {
+        refresh();
+    })
       .catch((err) => console.log("error: "+err));
   }
   

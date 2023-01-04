@@ -44,6 +44,12 @@ function Post(props){
     const count = likes.length;
     const [likeCount, setLikeCount] = useState(likes.length);
     const [likeId, setLikeId] = useState(null);
+
+
+    const [temp, setTemp] = useState([]);
+
+
+    
     
 
   const handleExpandClick = () => {
@@ -129,7 +135,7 @@ useEffect(() => {
     }else {
     refreshComment();
     }
-}, [commentList]);
+}, []);
 
 
 useEffect(() => {checklikes()}, []);
@@ -187,7 +193,7 @@ useEffect(() => {checklikes()}, []);
                       <Comment userId = {1} userName = {"User"} text = {comment.text}></Comment>
                     )) : "Loading"}
 
-{(localStorage.getItem("currentUser") == null || localStorage.getItem("currentUser") =="null") ? "" : <CommentForm userId = {1} userName = {"User"} postId = {postId}></CommentForm>}
+{(localStorage.getItem("currentUser") == null || localStorage.getItem("currentUser") =="null") ? "" : <CommentForm refreshFunction={refreshComment} userId = {1} userName = {"User"} postId = {postId}></CommentForm>}
                     
         </CardContent>
       </Collapse>

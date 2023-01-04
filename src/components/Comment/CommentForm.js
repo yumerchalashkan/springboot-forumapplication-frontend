@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 
 
 function Comment(props) {
-  const { userId, userName, postId } = props;
+  const { userId, userName, postId, refreshFunction } = props;
     const [text, setText] = React.useState("");
 
     const saveComment = () => {
@@ -25,6 +25,9 @@ function Comment(props) {
         }),
         })
         .then((res) => res.json())
+        .then((res) => {
+            refreshFunction();
+        })
         .catch((err) => console.log("error: "+err));
     }
 
@@ -34,6 +37,7 @@ function Comment(props) {
         return;
         }
         saveComment();
+
         setText("");
     }
   
