@@ -155,7 +155,11 @@ useEffect(() => {checklikes()}, []);
           </Link>
         }
         
-        title={title}
+        title={
+          <Typography variant="h6" fontWeight="fontWeightBold" color="textSecondary">
+      {title}
+    </Typography>
+        }
         
       />
       <CardContent>
@@ -190,7 +194,7 @@ useEffect(() => {checklikes()}, []);
         <CardContent>
         {error? "error" :
                     isLoaded? commentList.map(comment => (
-                      <Comment userId = {1} userName = {"User"} text = {comment.text}></Comment>
+                      <Comment userId = {1} userName = {""} text = {comment.text}></Comment>
                     )) : "Loading"}
 
 {(localStorage.getItem("currentUser") == null || localStorage.getItem("currentUser") =="null") ? "" : <CommentForm refreshFunction={refreshComment} userId = {1} userName = {"User"} postId = {postId}></CommentForm>}

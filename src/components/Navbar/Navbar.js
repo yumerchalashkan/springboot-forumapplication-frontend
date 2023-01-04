@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -9,13 +9,17 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import "./Navbar.scss";
 import LogoutIcon from '@mui/icons-material/Logout';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
+
+  const navigate = useNavigate();
 
     const logout = () => {
       localStorage.removeItem("currentUser");
       localStorage.removeItem("tokenKey");
       localStorage.removeItem("userName");
+      navigate('/');
       window.location.reload();
 
     };
@@ -24,15 +28,7 @@ function Navbar() {
         <div>
     <AppBar position="static" style={{ background: '#264653' }}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+          
           <Typography className="title" variant="h6" sx={{ flexGrow: 1 }}>
             <Link className="link" to="/">Home</Link>
           </Typography>

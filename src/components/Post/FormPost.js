@@ -93,7 +93,7 @@ const [open, setOpen] = React.useState(false);
           </Link>
         }
         
-        title={<OutlinedInput id="outlined-adornment-amount" placeholder="enter title" inputProps={{maxLength: 35}} fullWidth style={{height: '35px'}}
+        title={<OutlinedInput id="outlined-adornment-amount" placeholder="enter title" inputProps={{maxLength: 65}} fullWidth style={{height: '35px'}}
         onChange={(e)=>setTitle(e.target.value)} value={title}
         >
 
@@ -101,21 +101,18 @@ const [open, setOpen] = React.useState(false);
         
       />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
-        <OutlinedInput value={text} id="outlined-adornment-amount" onChange={(e)=>setText(e.target.value)} multiline placeholder="enter text" inputProps={{maxLength: 350}} fullWidth
+  <div style={{ overflow: "auto" }}>
+    <Typography variant="body2" color="text.secondary">
+      <OutlinedInput value={text} id="outlined-adornment-amount" onChange={(e) => setText(e.target.value)} multiline placeholder="enter text" inputProps={{ maxLength: 3250 }} fullWidth
         endAdornment={
-            <InputAdornment position="end">
-                <Button variant="contained" onClick={submit}>Enter</Button>
-            </InputAdornment>}
-            
-        >
-        </OutlinedInput>
-
-            
-
-
-        </Typography>
-      </CardContent>
+          <InputAdornment position="end">
+            <Button variant="contained" onClick={submit}>Enter</Button>
+          </InputAdornment>}
+      >
+      </OutlinedInput>
+    </Typography>
+  </div>
+</CardContent>
       
     </Card>
 

@@ -32,11 +32,17 @@ const sendRequest = async (type) => {
     });
     const result = await response.json();
     //console.log(result);
+
+    if (result.message === "User already exists") {
+      alert("User already exists");
+      window.location.reload();
+    }
+
     localStorage.setItem('tokenKey', result.message); 
     localStorage.setItem('currentUser', result.userId);
     localStorage.setItem('userName', username);
   } catch (err) {
-    console.log(err);
+    alert("Username or password is incorrect");
   }
 }
 
@@ -46,7 +52,7 @@ const functionRegister = async () => {
   setPassword('');
   window.location.reload();
   navigate('/auth');
-  //
+  
 }
 
 const functionLogin = async () => {
