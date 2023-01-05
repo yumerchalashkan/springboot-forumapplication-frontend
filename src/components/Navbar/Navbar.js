@@ -10,6 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import "./Navbar.scss";
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useNavigate } from 'react-router-dom';
+import CloudIcon from '@mui/icons-material/Cloud';
 
 function Navbar() {
 
@@ -29,9 +30,10 @@ function Navbar() {
     <AppBar position="static" style={{ background: '#264653' }}>
         <Toolbar>
           
-          <Typography className="title" variant="h6" sx={{ flexGrow: 1 }}>
+        <Typography className="title" variant="h6" sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
             <Link className="link" to="/">Home</Link>
-          </Typography>
+            <CloudIcon sx={{ fontSize: 38, color : "tomato" }} />
+        </Typography>
 
           <Typography variant="h6">
   {
