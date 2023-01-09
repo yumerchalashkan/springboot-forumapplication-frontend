@@ -1,4 +1,6 @@
 import { FormControl, InputLabel, Input, Button, FormHelperText } from '@mui/material';
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -81,8 +83,14 @@ const functionLogin = async () => {
                 background :'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
                 color : 'white'}}
                 onClick={() => functionLogin("login")}>Login</Button>
-            
+            <Stack sx={{ width: '100%', marginTop: "40px" }} spacing={2}>
+          <Alert severity="info"><i>Sample Users:</i><br></br>
+                  Username: <strong>admin</strong> Password: <strong>admin</strong><br></br>
+                  Username: <strong>demo</strong> Password: <strong>demo</strong><br></br>
+          </Alert>
+        </Stack>
         </FormControl>
+        
     </div>
   );
 }
