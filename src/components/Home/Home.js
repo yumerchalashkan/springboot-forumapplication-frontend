@@ -21,7 +21,7 @@ function Home() {
     const [postList, setPostList] = useState([]);
 
     const refresh = () => {
-        fetch("http://localhost:8080/api/posts")
+        fetch("https://springboot-forum.herokuapp.com/api/posts")
             .then(res => res.json())
             .then(
                 (result) => {

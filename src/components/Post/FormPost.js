@@ -30,7 +30,7 @@ const [isSent, setIsSent] = React.useState(false);
 const [open, setOpen] = React.useState(false);
 
   const savePost = () => {
-    fetch("http://localhost:8080/api/posts", {
+    fetch("https://springboot-forum.herokuapp.com/api/posts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

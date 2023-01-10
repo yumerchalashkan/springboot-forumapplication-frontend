@@ -81,7 +81,7 @@ function Post(props){
 
 
   const refreshComment = () => {
-    fetch("http://localhost:8080/api/comments?postId=" + postId)
+    fetch("https://springboot-forum.herokuapp.com/api/comments?postId=" + postId)
         .then(res => res.json())
         .then(
             (result) => {
@@ -97,7 +97,7 @@ function Post(props){
 
 const saveLike = async () => {
   try {
-    const res = await fetch("http://localhost:8080/api/like", {
+    const res = await fetch("https://springboot-forum.herokuapp.com/api/like", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -117,7 +117,7 @@ const saveLike = async () => {
 
 const deleteLike = async () => {
   try {
-    await fetch("http://localhost:8080/api/like/" + likeId, {
+    await fetch("https://springboot-forum.herokuapp.com/api/like/" + likeId, {
       method: "DELETE",
       headers: {
         

@@ -12,7 +12,7 @@ function Comment(props) {
     const [text, setText] = React.useState("");
 
     const saveComment = () => {
-        fetch("http://localhost:8080/api/comments", {
+        fetch("https://springboot-forum.herokuapp.com/api/comments", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

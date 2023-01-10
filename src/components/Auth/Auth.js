@@ -22,7 +22,7 @@ function Auth(){
 //http://localhost:8080/api/auth/
 const sendRequest = async (type) => {
   try {
-    const response = await fetch("http://localhost:8080/api/auth/"+type, {
+    const response = await fetch("https://springboot-forum.herokuapp.com/api/auth/"+type, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
